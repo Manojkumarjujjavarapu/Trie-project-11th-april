@@ -13,23 +13,31 @@ public class TrieProgram {
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
             sc.nextLine();  
-            if (choice == 1) {
+            if (choice == 1) 
+            {
                 System.out.print("Enter word: ");
                 String word = sc.nextLine();
                 trie.insert(word);
                 System.out.println("Word inserted.");
-            } else if (choice == 2) {
+            } 
+            else if (choice == 2) 
+            {
                 System.out.print("Enter word: ");
                 String word = sc.nextLine();
                 boolean exists = trie.search(word);
                 System.out.println("Found: " + exists);
-            } else if (choice == 3) {
+            }
+            else if (choice == 3) 
+            {
                 List<String> all = trie.getAllWords();
                 System.out.println("Words in trie:");
-                for (String w : all) {
+                for (String w : all)
+                    {
                     System.out.println(w);
-                }
-            } else if (choice == 4) {
+                    }
+            } 
+            else if (choice == 4) 
+            {
                 List<String> sWords = trie.getWordsWithPrefix("s");
                 System.out.println("Words starting with 'S':");
                 if(sWords.isEmpty())
@@ -39,23 +47,30 @@ public class TrieProgram {
                 for (String w : sWords) {
                     System.out.println(w);
                 }
-            } else if (choice == 5) {
+            } 
+            else if (choice == 5)
+            {
                 System.out.println("Thanks for using 22H51A6290'S Trie Program!");
                 break;
-            } else {
+            } 
+            else
+            {
                 System.out.println("Invalid choice, try again.");
             }
         }
     }
-    static class Node {
+    static class Node 
+    {
         Node[] next = new Node[26];
         boolean isWord = false;
     }
     static class Trie {
         Node root = new Node();
-        void insert(String word) {
+        void insert(String word)
+        {
             Node cur = root;
-            for (char c : word.toLowerCase().toCharArray()) {
+            for (char c : word.toLowerCase().toCharArray()) 
+            {
                 int idx = c - 'a';
                 if (cur.next[idx] == null) {
                     cur.next[idx] = new Node();
